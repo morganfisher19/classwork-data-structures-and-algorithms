@@ -1,4 +1,3 @@
-package Answers;
 /*--------------------------------------------------------------------------
 GWU CSCI 1112 Spring 2026
 author: <your name>
@@ -6,10 +5,6 @@ author: <your name>
 This class encapsulates the game logic needed to support a Scrabble like
 tile based spelling game
 --------------------------------------------------------------------------*/
-
-import TileGame;
-import UniformRandom;
-
 class TileGame {
     //                            A,B,C,D, E,F,G,H,I,J,K,L,M,N,O,P, Q,R,S,T,U,V,W,X,Y, Z
     /// the points for a given alpha

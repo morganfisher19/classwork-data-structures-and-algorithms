@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------------
 GWU CSCI 1112 Spring 2026
-author: <your name>
+author: Morgan Fisher
 
 This class encapsulates the game logic needed to support a Scrabble like
 tile based spelling game
@@ -64,9 +64,17 @@ class TileGame {
     /// @return a copy of the tilebag array/an array of the number of tiles
     ///         available for each alpha ordinal position.  
     public static int[] copyTileBag() {
-        // TODO : Add your code here
+        // variable for original tile bag:
+        //int[] originalBag = tilebag;
 
-        return null;
+        // creating an empty array for copying bag
+        int[] deepCopyTilebag = new int [tilebag.length];
+
+        for (int i=0; i < tilebag.length; i++) {
+            deepCopyTilebag[i] = tilebag[i];
+        }
+
+        return deepCopyTilebag;
     }
 
     // ----------------------------------------------------------------------
@@ -119,6 +127,12 @@ class TileGame {
     ///         the word; otherwise, false.
     public static boolean canSpell( char[] hand, char[] word ) {
         // TODO : Add your code here
+        int[] handNumeric = 
+        int[] handCount = 
+        for (int i=0; i < 26; i++) {
+            char x = '9';
+            int y = x - '0'; // gives the int value 9
+        }
 
         return false;
     }

@@ -1,4 +1,3 @@
-package Answers;
 /*--------------------------------------------------------------------------
 GWU CSCI 1112 Fall 2025
 author: James Taylor
@@ -8,9 +7,6 @@ TileGame class.  This game could be expanded rather easily to model the
 entire Scrabble game but it is a rough approximation of the concept that
 we will call Scramble instead.
 --------------------------------------------------------------------------*/
-
-import UniformRandom;
-import WordTool;
 
 class Scramble {
 

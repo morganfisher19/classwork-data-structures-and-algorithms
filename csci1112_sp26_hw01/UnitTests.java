@@ -5,9 +5,6 @@ author: James Taylor
 This is a set of unit tests that validate the TileGame class which is 
 intended to facilitate playing Scramble.
 --------------------------------------------------------------------------*/
-
-import Answers.TileGame;
-
 class UnitTests {
     // This is a case where a global reference to a dictionary makes sense.
     // The dictionary is a read only database of sorts and we wish to have 
