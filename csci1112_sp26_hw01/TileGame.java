@@ -126,15 +126,39 @@ class TileGame {
     /// @return true if the characters in hand can be used to spell
     ///         the word; otherwise, false.
     public static boolean canSpell( char[] hand, char[] word ) {
-        // TODO : Add your code here
-        int[] handNumeric = 
-        int[] handCount = 
-        for (int i=0; i < 26; i++) {
-            char x = '9';
-            int y = x - '0'; // gives the int value 9
+        // Convert hand array to numbers
+        int[] handNumeric = new int[hand.length];
+        for (int i=0; i < hand.length; i++) {
+            handNumeric[i] = hand[i] - 'A';
         }
 
-        return false;
+        // Convert word array to numbers
+        int[] wordNumeric = new int[word.length];
+        for (int i=0; i < word.length; i++) {
+            wordNumeric[i] = word[i] - 'A';
+        }
+
+        // Create new array that adds for hands and subtracts for words 
+        int[] tileTracker = new int [26];
+        for (int i=0; i < handNumeric.length; i++) {
+            int index = handNumeric[i];
+            tileTracker[index]++;
+        }
+        for (int i=0; i < wordNumeric.length; i++) {
+            int index = wordNumeric[i];
+            tileTracker[index]--;
+        }
+
+        // Loop through array to check if characters in word are in hand
+        boolean characterCheck = true;
+        for (int i=0; i < tileTracker.length; i++) {
+            if (tileTracker[i] < 0) {
+                characterCheck = false;
+            }
+
+        }
+
+        return characterCheck;
     }
 
     // ----------------------------------------------------------------------
@@ -147,8 +171,17 @@ class TileGame {
     ///         input hand according to getWordScore; otherwise, null
     ///         if no word in dictionary can be spelled with hand
     public static String getBestWord( char[] hand, String[] dictionary ) {
-        // TODO : Add your code here
-
-        return null;
+        String bestWord = null;
+        int bestScore = 0;
+        for (int i=0; i < dictionary.length; i++) {
+            char[] word = dictionary[i].toCharArray();
+            if (canSpell(hand, word) == true) {
+                int score = getWordScore(word);
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestWord = new String(word);
+                }
+            }
+        return bestWord;
     }
 }
