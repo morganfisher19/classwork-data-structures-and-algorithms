@@ -91,12 +91,12 @@ class EmbeddedSet {
     public static String[] extractWords( char[] cipher, String[] dictionary ) {
         String[] words = new String[0];
 
-        return recursion( cipher, dictionary, words );
+        return extractWords( cipher, dictionary, words );
     }
 
     
     
-    private static String[] recursion( char[] cipher, String[] dictionary, String[] words ) {
+    private static String[] extractWords( char[] cipher, String[] dictionary, String[] words ) {
         // Base cases:
 
         // No letters left in cipher
@@ -126,7 +126,7 @@ class EmbeddedSet {
                 cipher = removeWordFromCipher(cipher, dict_word, index);
 
                 // repeat recursion
-                words = recursion(cipher, dictionary, words);
+                words = extractWords(cipher, dictionary, words);
                 break;
 
             }
